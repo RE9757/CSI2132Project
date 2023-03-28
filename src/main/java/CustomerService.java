@@ -59,7 +59,7 @@ public class CustomerService {
         String message = "";
 
 
-        String sql = "DELETE FROM Customer WHERE id = ?;";
+        String sql = "DELETE FROM Customer WHERE CustomerId = ?;";
 
         ConnectionDB db = new ConnectionDB();
 
@@ -90,6 +90,8 @@ public class CustomerService {
         Connection con = null;
 
         ConnectionDB db = new ConnectionDB();
+
+
         System.out.println(customer.getSINSSN());
         System.out.println(customer.getAddress());
         System.out.println(customer.getFullName());
@@ -97,14 +99,14 @@ public class CustomerService {
         System.out.println(customer.getCustomerId());
 
 
-        String insertEmployeeQuery = "INSERT INTO Employee (SINSSN, Hotel_ID, RoomNumber, Address, FullName, Role) VALUES (?, ?, ?, ?, ?, ?);";
+        String insertCustomerQuery = "INSERT INTO Customer (SINSSN, Address, FullName, DateOfRegistration, CustomerId) VALUES (?, ?, ?, ?, ?);";
 
 
         try {
             con = db.getConnection(); //get Connection
 
             // prepare the statement
-            PreparedStatement stmt = con.prepareStatement(insertEmployeeQuery);
+            PreparedStatement stmt = con.prepareStatement(insertCustomerQuery);
 
             // set every ? of statement
             stmt.setInt(1, customer.getSINSSN());

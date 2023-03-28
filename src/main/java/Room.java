@@ -12,19 +12,19 @@ public class Room {
 
     private Integer Price;
 
-    private String Amenities;
+    private Boolean Amenities;
 
     private String Capacity;
 
-    private String Extendability;
+    private Boolean Extendability;
 
     private String View;
 
     private String Status;
 
     public Room(Integer RoomNumber, String Address, Integer Hotel_ID,
-                String Problem, Integer Price, String Amenities,
-                String Capacity, String Extendability, String View, String Status){
+                String Problem, Integer Price, Boolean Amenities,
+                String Capacity, Boolean Extendability, String View, String Status){
         this.RoomNumber = RoomNumber;
         this.Address = Address;
         this.Hotel_ID = Hotel_ID;
@@ -57,7 +57,7 @@ public class Room {
         return Price;
     }
 
-    public String getAmenities() {
+    public Boolean getAmenities() {
         return Amenities;
     }
 
@@ -65,7 +65,7 @@ public class Room {
         return Capacity;
     }
 
-    public String getExtendability() {
+    public Boolean getExtendability() {
         return Extendability;
     }
 
@@ -97,7 +97,7 @@ public class Room {
         Price = price;
     }
 
-    public void setAmenities(String amenities) {
+    public void setAmenities(Boolean amenities) {
         Amenities = amenities;
     }
 
@@ -105,7 +105,7 @@ public class Room {
         Capacity = capacity;
     }
 
-    public void setExtendability(String extendability) {
+    public void setExtendability(Boolean extendability) {
         Extendability = extendability;
     }
 

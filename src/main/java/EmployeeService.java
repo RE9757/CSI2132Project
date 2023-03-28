@@ -61,7 +61,7 @@ public class EmployeeService {
         String message = "";
 
         // sql query
-        String sql = "DELETE FROM Employee WHERE id = ?;";
+        String sql = "DELETE FROM Employee WHERE SSNSIN = ?;";
 
         // database connection object
         ConnectionDB db = new ConnectionDB();
