@@ -30,7 +30,7 @@ public class HotelService {
                         rs.getString("Email"),
                         rs.getInt("NumberOfRooms"),
                         rs.getString("StarsRating"),
-                        rs.getInt("PhoneNumber")
+                        rs.getString("PhoneNumber")
                 );
 
 
@@ -112,7 +112,7 @@ public class HotelService {
             stmt.setString(3, hotel.getEmail());
             stmt.setInt(4, hotel.getNumberOfRooms());
             stmt.setString(5, hotel.getStarsRating());
-            stmt.setInt(6, hotel.getPhoneNumber());
+            stmt.setString(6, hotel.getPhoneNumber());
 
             int output = stmt.executeUpdate();
             System.out.println(output);
@@ -156,7 +156,7 @@ public class HotelService {
             stmt.setString(3, hotel.getEmail());
             stmt.setInt(4, hotel.getNumberOfRooms());
             stmt.setString(5, hotel.getStarsRating());
-            stmt.setInt(6, hotel.getPhoneNumber());
+            stmt.setString(6, hotel.getPhoneNumber());
 
 
             stmt.executeUpdate();

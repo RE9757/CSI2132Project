@@ -10,10 +10,10 @@ public class Hotel {
 
     private String StarsRating;
 
-    private Integer PhoneNumber;
+    private String PhoneNumber;
 
     public Hotel(String Address, Integer Hotel_ID, String Email,
-                 Integer NumberOfRooms, String StarsRating, Integer PhoneNumber){
+                 Integer NumberOfRooms, String StarsRating, String PhoneNumber){
         this.Address = Address;
         this.Hotel_ID = Hotel_ID;
         this.Email = Email;
@@ -42,7 +42,7 @@ public class Hotel {
         return StarsRating;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return PhoneNumber;
     }
 
@@ -66,7 +66,7 @@ public class Hotel {
         StarsRating = starsRating;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
     }
 

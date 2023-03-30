@@ -6,7 +6,7 @@ public class HotelChain {
 
     private String email;
 
-    private Integer PhoneNumber;
+    private String PhoneNumber;
 
     private Integer NumberOfHotels;
 
@@ -14,7 +14,7 @@ public class HotelChain {
 
     private String name;
 
-    public HotelChain(Integer Hotel_ID, String email, Integer PhoneNumber,
+    public HotelChain(Integer Hotel_ID, String email, String PhoneNumber,
                       Integer NumberOfHotels, String AddressOfCentralOffice, String name){
         this.Hotel_ID = Hotel_ID;
         this.email = email;
@@ -32,7 +32,7 @@ public class HotelChain {
         return email;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return PhoneNumber;
     }
 
@@ -55,7 +55,7 @@ public class HotelChain {
         this.email = email;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
     }
 
@@ -75,7 +75,7 @@ public class HotelChain {
     public String toString() {
 
         return "<ul>"
-                + "<li>HotelID= " + Hotel_ID + "</li>"
+                + "<li>Hotel_ID= " + Hotel_ID + "</li>"
                 + "<li>email= " + email + "</li>"
                 + "<li>PhoneNumber= " + PhoneNumber + "</li>"
                 + "<li>NumberOfHotels= " + NumberOfHotels + "</li>"
