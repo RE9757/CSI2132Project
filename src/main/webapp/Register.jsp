@@ -47,7 +47,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title> Home Page </title>
+    <title> Register Page </title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -55,7 +55,6 @@
 </head>
 
 <body>
-<h2>Hello World!</h2>
 
 
     <jsp:include page="navbar.jsp"/>
@@ -66,9 +65,9 @@
             <div class="col-md-4">
                 <div class="card" id="card-container-layout">
                     <div class="card-body" id="card">
-                        <h4 class="card-title">Login</h4>
-                        <p class="card-text" id="paragraph">Login to Book Room</p>
-                        <a class="btn btn-primary" id="show-btn" href="login.jsp">Click</a>
+                        <h4 class="card-title">Employee</h4>
+                        <p class="card-text" id="paragraph">Employee only</p>
+                        <a class="btn btn-primary" id="show-btn" href="EmployeeRegister.jsp">Click</a>
                     </div>
                 </div>
             </div>
@@ -81,9 +80,9 @@
                 <div class="col-md-4">
                     <div class="card" id="card-container-layout">
                         <div class="card-body" id="card">
-                            <h4 class="card-title">Register</h4>
-                            <p class="card-text" id="paragraph">Please register before booking room</p>
-                            <a class="btn btn-primary" id="show-btn" href="Register.jsp">Click</a>
+                            <h4 class="card-title">Customer</h4>
+                            <p class="card-text" id="paragraph">Customer only</p>
+                            <a class="btn btn-primary" id="show-btn" href="CustomerRegister.jsp">Click</a>
                         </div>
                     </div>
                 </div>

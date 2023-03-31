@@ -55,39 +55,6 @@
 </head>
 
 <body>
-<h2>Hello World!</h2>
 
 
-    <jsp:include page="navbar.jsp"/>
-
-    <input type="hidden" name="message" id="message" value='<%=msgField%>' >
-    <div class="container" id="row-container">
-        <div class="row" id="row">
-            <div class="col-md-4">
-                <div class="card" id="card-container-layout">
-                    <div class="card-body" id="card">
-                        <h4 class="card-title">Login</h4>
-                        <p class="card-text" id="paragraph">Login to Book Room</p>
-                        <a class="btn btn-primary" id="show-btn" href="login.jsp">Click</a>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-
-        <input type="hidden" name="message" id="message" value='<%=msgField%>' >
-        <div class="container" id="row-container">
-            <div class="row" id="row">
-                <div class="col-md-4">
-                    <div class="card" id="card-container-layout">
-                        <div class="card-body" id="card">
-                            <h4 class="card-title">Register</h4>
-                            <p class="card-text" id="paragraph">Please register before booking room</p>
-                            <a class="btn btn-primary" id="show-btn" href="Register.jsp">Click</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-
-</body>
-</html>
+<%= "My customer information: "customer.toString() %>
