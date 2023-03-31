@@ -11,7 +11,7 @@ public class CustomerService {
     public List<Customer> getCustomers() throws Exception {
 
 
-        String sql = "SELECT * FROM sql.Customer";
+        String sql = "SELECT * FROM Customer";
 
         ConnectionDB db = new ConnectionDB();
 
@@ -24,12 +24,12 @@ public class CustomerService {
             PreparedStatement stmt = con.prepareStatement(sql);
 
 
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();//"SELECT * FROM CSI2132Project.Customer"
 
             while (rs.next()) {
 
                 Customer customer = new Customer(
-                        rs.getInt("SSNSIN"),
+                        rs.getInt("SINSSN"),
                         rs.getString("Address"),
                         rs.getString("FullName"),
                         rs.getDate("DateOfRegistration"),
@@ -59,7 +59,7 @@ public class CustomerService {
         String message = "";
 
 
-        String sql = "DELETE FROM sql.Customer WHERE CustomerId = ?;";
+        String sql = "DELETE FROM Customer WHERE CustomerId = ?;";
 
         ConnectionDB db = new ConnectionDB();
 
@@ -99,7 +99,7 @@ public class CustomerService {
         System.out.println(customer.getCustomerId());
 
 
-        String insertCustomerQuery = "INSERT INTO sql.Customer (SINSSN, Address, FullName, DateOfRegistration, CustomerId) VALUES (?, ?, ?, ?, ?);";
+        String insertCustomerQuery = "INSERT INTO Customer (SINSSN, Address, FullName, DateOfRegistration, CustomerId) VALUES (?, ?, ?, ?, ?);";
 
 
         try {

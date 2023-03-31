@@ -11,7 +11,7 @@ public class HotelChainService {
     public List<HotelChain> getHotelChain() throws Exception {
 
         // sql query
-        String sql = "SELECT * FROM sql.HotelChain";
+        String sql = "SELECT * FROM HotelChain";
         ConnectionDB db = new ConnectionDB();
 
 
@@ -22,7 +22,7 @@ public class HotelChainService {
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();//"SELECT * FROM CSI2132Project.HotelChain"
 
             while (rs.next()) {
 
@@ -58,7 +58,7 @@ public class HotelChainService {
         String message = "";
 
 
-        String sql = "DELETE FROM sql.HotelChain WHERE Hotel_ID = ?;";
+        String sql = "DELETE FROM HotelChain WHERE Hotel_ID = ?;";
 
 
         ConnectionDB db = new ConnectionDB();
@@ -76,10 +76,10 @@ public class HotelChainService {
             stmt.close();
 
         } catch (Exception e) {
-            message = "Error while delete sql.HotelChain: " + e.getMessage();
+            message = "Error while delete HotelChain: " + e.getMessage();
         } finally {
             if (con != null) con.close();
-            if (message.equals("")) message = "sql.HotelChain successfully deleted!";
+            if (message.equals("")) message = "HotelChain successfully deleted!";
         }
 
         return message;
@@ -99,7 +99,7 @@ public class HotelChainService {
         System.out.println(hotelChain.getName());
 
 
-        String insertHotelChainQuery = "INSERT INTO sql.HotelChain (Hotel_ID,Email,PhoneNumber,NumberOfHotels,AddressOfCentralOffice,Name) VALUES (?, ?, ?, ?, ?, ?);";
+        String insertHotelChainQuery = "INSERT INTO HotelChain (Hotel_ID,Email,PhoneNumber,NumberOfHotels,AddressOfCentralOffice,Name) VALUES (?, ?, ?, ?, ?, ?);";
 
 
         try {
@@ -141,7 +141,7 @@ public class HotelChainService {
         String message = "";
 
 
-        String sql = "UPDATE sql.HotelChain SET Email=?,PhoneNumber=?,NumberOfHotels=?,AddressOfCentralOffice=?,Name=? WHERE Hotel_ID=?;";
+        String sql = "UPDATE HotelChain SET Email=?,PhoneNumber=?,NumberOfHotels=?,AddressOfCentralOffice=?,Name=? WHERE Hotel_ID=?;";
 
 
         ConnectionDB db = new ConnectionDB();

@@ -11,7 +11,7 @@ public class BookingService {
         public List<Booking> getBookings() throws Exception {
 
             // sql query
-            String sql = "SELECT * FROM sql.Booking";
+            String sql = "SELECT * FROM Booking";
             ConnectionDB db = new ConnectionDB();
 
 
@@ -22,7 +22,7 @@ public class BookingService {
 
                 PreparedStatement stmt = con.prepareStatement(sql);
 
-                ResultSet rs = stmt.executeQuery();
+                ResultSet rs = stmt.executeQuery();//"SELECT * FROM CSI2132Project.Booking"
 
                 while (rs.next()) {
 
@@ -57,7 +57,7 @@ public class BookingService {
             String message = "";
 
 
-            String sql = "DELETE FROM sql.Hotel WHERE BookingID = ?;";
+            String sql = "DELETE FROM Booking WHERE BookingID = ?;";
 
 
             ConnectionDB db = new ConnectionDB();
@@ -97,7 +97,7 @@ public class BookingService {
             System.out.println(booking.getEnd_Date());
 
 
-            String insertBookingQuery = "INSERT INTO sql.Booking (BookingID, SINSSN, RoomNumber, Start_Date, End_Date) VALUES (?, ?, ?, ?, ?);";
+            String insertBookingQuery = "INSERT INTO Booking (BookingID, SINSSN, RoomNumber, Start_Date, End_Date) VALUES (?, ?, ?, ?, ?);";
 
 
             try {

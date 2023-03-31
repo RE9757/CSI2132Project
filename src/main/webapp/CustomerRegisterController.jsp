@@ -2,6 +2,7 @@
 
 <%@ page import="sql.CustomerService" %>
 <%@ page import="sql.Customer" %>
+<%@ page import="sql.ConnectionDB" %>
 <%@ page import="jsp.Message" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Date" %>
@@ -45,5 +46,5 @@
     // set session attribute named messages to messages value
     session.setAttribute("messages", messages);
     // redirect to index
-    response.sendRedirect("index.jsp");
+    response.sendRedirect("LoginSuccessCustomer.jsp");
 %>

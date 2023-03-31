@@ -1,3 +1,4 @@
+<%@ page import="sql.ConnectionDB" %>
 <%@ page import="jsp.LayoutService" %>
 <%@ page import="jsp.Pair" %>
 <%@ page import="jsp.Message" %>

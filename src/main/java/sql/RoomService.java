@@ -11,7 +11,7 @@ public class RoomService {
     public List<Room> getRooms() throws Exception {
 
 
-        String sql = "SELECT * FROM sql.Room";
+        String sql = "SELECT * FROM Room";
 
         ConnectionDB db = new ConnectionDB();
 
@@ -24,7 +24,7 @@ public class RoomService {
             PreparedStatement stmt = con.prepareStatement(sql);
 
 
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();//"SELECT * FROM CSI2132Project.Room"
 
 
 
@@ -67,7 +67,7 @@ public class RoomService {
         String message = "";
 
 
-        String sql = "DELETE FROM sql.Room WHERE RoomNumber = ?;";
+        String sql = "DELETE FROM Room WHERE RoomNumber = ?;";
 
         ConnectionDB db = new ConnectionDB();
 
@@ -86,7 +86,7 @@ public class RoomService {
             message = "Error while delete room: " + e.getMessage();
         } finally {
             if (con != null) con.close();
-            if (message.equals("")) message = "sql.Room successfully deleted!";
+            if (message.equals("")) message = "Room successfully deleted!";
         }
 
         return message;
@@ -112,7 +112,7 @@ public class RoomService {
         System.out.println(room.getStatus());
 
 
-        String insertRoomQuery = "INSERT INTO sql.Room (RoomNumber, Address, Hotel_ID, Problem, Price, Amenities, Capacity, Extendability, View, Status) " +
+        String insertRoomQuery = "INSERT INTO Room (RoomNumber, Address, Hotel_ID, Problem, Price, Amenities, Capacity, Extendability, View, Status) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
@@ -159,7 +159,7 @@ public class RoomService {
         String message = "";
 
 
-        String sql = "UPDATE sql.Room SET Address = ?, Hotel_ID = ?, Problem = ?, Price = ?, Amenities = ?, Capacity = ?, Extendability =?," +
+        String sql = "UPDATE Room SET Address = ?, Hotel_ID = ?, Problem = ?, Price = ?, Amenities = ?, Capacity = ?, Extendability =?," +
                 " View = ?, Status = ? WHERE RoomNumber=?;";
 
 
@@ -193,10 +193,14 @@ public class RoomService {
 
         } finally {
             if (con != null) con.close();
-            if (message.equals("")) message = "sql.Room successfully updated!";
+            if (message.equals("")) message = "Room successfully updated!";
         }
 
 
         return message;
     }
 }
+
+
+
+

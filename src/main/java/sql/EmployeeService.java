@@ -11,7 +11,7 @@ public class EmployeeService {
     public List<Employee> getEmployees() throws Exception {
 
         // sql query
-        String sql = "SELECT * FROM sql.Employee";
+        String sql = "SELECT * FROM Employee";
         // database connection object
         ConnectionDB db = new ConnectionDB();
 
@@ -24,7 +24,7 @@ public class EmployeeService {
             PreparedStatement stmt = con.prepareStatement(sql);
 
             // get the results from executing the query
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();//"SELECT * FROM CSI2132Project.Employee"
 
 
             // iterate through the result set
@@ -63,7 +63,7 @@ public class EmployeeService {
         String message = "";
 
         // sql query
-        String sql = "DELETE FROM sql.Employee WHERE SSNSIN = ?;";
+        String sql = "DELETE FROM Employee WHERE SSNSIN = ?;";
 
         // database connection object
         ConnectionDB db = new ConnectionDB();
@@ -108,7 +108,7 @@ public class EmployeeService {
         System.out.println(employee.getRole());
 
 
-        String insertEmployeeQuery = "INSERT INTO sql.Employee (SINSSN, Hotel_ID, RoomNumber, Address, FullName, Role) VALUES (?, ?, ?, ?, ?, ?);";
+        String insertEmployeeQuery = "INSERT INTO Employee (SINSSN, Hotel_ID, RoomNumber, Address, FullName, Role) VALUES (?, ?, ?, ?, ?, ?);";
 
 
         try {
@@ -136,7 +136,7 @@ public class EmployeeService {
         } finally {
             if (con != null) // if connection is still open, then close.
                 con.close();
-            if (message.equals("")) message = "sql.Employee successfully inserted!";
+            if (message.equals("")) message = "Employee successfully inserted!";
 
         }
 

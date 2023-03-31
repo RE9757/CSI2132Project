@@ -11,7 +11,7 @@ public class HotelService {
     public List<Hotel> getHotels() throws Exception {
 
         // sql query
-        String sql = "SELECT * FROM sql.Hotel";
+        String sql = "SELECT * FROM Hotel";
         ConnectionDB db = new ConnectionDB();
 
 
@@ -22,7 +22,7 @@ public class HotelService {
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();//"SELECT * FROM CSI2132Project.Hotel"
 
             while (rs.next()) {
 
@@ -58,7 +58,7 @@ public class HotelService {
         String message = "";
 
 
-        String sql = "DELETE FROM sql.Hotel WHERE Hotel_ID = ?;";
+        String sql = "DELETE FROM Hotel WHERE Hotel_ID = ?;";
 
 
         ConnectionDB db = new ConnectionDB();
@@ -76,10 +76,10 @@ public class HotelService {
             stmt.close();
 
         } catch (Exception e) {
-            message = "Error while delete sql.Hotel: " + e.getMessage();
+            message = "Error while delete Hotel: " + e.getMessage();
         } finally {
             if (con != null) con.close();
-            if (message.equals("")) message = "sql.Hotel successfully deleted!";
+            if (message.equals("")) message = "Hotel successfully deleted!";
         }
 
         return message;
@@ -99,7 +99,7 @@ public class HotelService {
         System.out.println(hotel.getPhoneNumber());
 
 
-        String insertHotelQuery = "INSERT INTO sql.Hotel (Address, Hotel_ID, Email, NumberOfRooms, StarsRating, PhoneNumber) VALUES (?, ?, ?, ?, ?, ?);";
+        String insertHotelQuery = "INSERT INTO Hotel (Address, Hotel_ID, Email, NumberOfRooms, StarsRating, PhoneNumber) VALUES (?, ?, ?, ?, ?, ?);";
 
 
         try {
@@ -127,7 +127,7 @@ public class HotelService {
         } finally {
             if (con != null) // if connection is still open, then close.
                 con.close();
-            if (message.equals("")) message = "sql.Hotel successfully inserted!";
+            if (message.equals("")) message = "Hotel successfully inserted!";
 
         }
 

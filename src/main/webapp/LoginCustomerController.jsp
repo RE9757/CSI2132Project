@@ -2,6 +2,7 @@
 
 <%@ page import="sql.CustomerService" %>
 <%@ page import="sql.Customer" %>
+<%@ page import="sql.ConnectionDB" %>
 <%@ page import="jsp.Message" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
