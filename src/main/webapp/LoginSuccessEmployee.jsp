@@ -35,6 +35,16 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
+
+
+
+    RentService rentService = new RentService();
+    List<Rent> rents = null;
+    try {
+        rents = rentService.getRents();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
 %>
 
 <!DOCTYPE html>
@@ -101,55 +111,59 @@
                                 </tbody>
                             </table>
                         </div>
-                        <% } %>
-                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>
     </div>
 
-    <h2>Place for Booking Button & textbox for RoomNumber</h2>
+
+    <input type="hidden" name="message" id="message" value='<%=msgField%>' >
+        <div class="container">
+            <div class="row" id="row">
+                <div class="col-md-12">
+                    <div class="card" id="card-container">
+                       <% if (rents == null || rents.size() == 0) { %>
+                           <h1 style="margin-top: 5rem;">No Rents found!</h1>
+                               <% } else { %>
+                                   <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                            <th>SINSSN</th>
+                                            <th>RoomNumber</th>
+                                            <th>Start_Date</th>
+                                            <th>End_Date</th>
+                                            <th>Rent_ID</th>
+                                            <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                             <% for (Rent rent : rents) { %>
+                                             <tr>
+                                            <td><%= rent.getSINSSN() %></td>
+                                            <td><%= rent.getRoomNumber() %></td>
+                                            <td><%= rent.getStart_Date() %></td>
+                                            <td><%= rent.getEnd_Date() %></td>
+                                            <td><%= rent.getRent_ID() %></td>
+                                            <td></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <h2>Change Room Status button(update rooms, rent):</h2>
+
 
 
     <script src="/assets/js/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            toastr.options = {
-                "closeButton": true,
-                "positionClass": "toast-bottom-right",
-                "preventDuplicates": false
-            };
-            /* In order to access variables sent to ejs file to script you must Parse them to string */
-            /* then to parse them back to JSON */
-            let messages = document.getElementById("message").value;
-            if (messages !== "") messages = JSON.parse("[" + messages.slice(0, -1) + "]");
-            else messages = [];
-
-            messages
-                .forEach(({
-                  type,
-                  value
-                }) => {
-                switch (type) {
-                    case "error":
-                        toastr.error(value)
-                        break;
-                    case "success":
-                        toastr.success(value)
-                        break;
-                    case "warning":
-                        toastr.warning(value)
-                        break;
-                    default:
-                        toastr.info(value)
-                        break;
-                }
-            });
-        })
-    </script>
-
 </body>
 
 </html>

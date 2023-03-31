@@ -11,7 +11,7 @@ public class EmployeeService {
     public List<Employee> getEmployees() throws Exception {
 
         // sql query
-        String sql = "SELECT * FROM Employee";
+        String sql = "SELECT * FROM CSI2132Project.Employee";
         // database connection object
         ConnectionDB db = new ConnectionDB();
 

@@ -11,7 +11,7 @@ public class CustomerService {
     public List<Customer> getCustomers() throws Exception {
 
 
-        String sql = "SELECT * FROM Customer";
+        String sql = "SELECT * FROM CSI2132Project.Customer";
 
         ConnectionDB db = new ConnectionDB();
 

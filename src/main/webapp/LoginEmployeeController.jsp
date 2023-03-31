@@ -14,23 +14,23 @@
     Integer SINSSN = Integer.parseInt(request.getParameter("SINSSN"));
     String FullName = request.getParameter("FullName");
 
-    CustomerService customerService = new CustomerService();
+    EmployeeService employeeService = new EmployeeService();
 
-    List<Customer> customers = new ArrayList<>();
+    List<Employee> employees = new ArrayList<>();
 
     try {
-        customers = customerService.getCustomers();
+        employees = employeeService.getEmployees();
     } catch (Exception e) {
         e.printStackTrace();
         System.out.println("error" + "Something went wrong!");
     }
 
-    for (Customer c : customers) {
-        if (c.getSINSSN()==(SINSSN) && c.getFullName()==(FullName)) {//.equals?
+    for (Employee e : employees) {
+        if (e.getSINSSN()==(SINSSN) && e.getFullName()==(FullName)) {
             // set session attribute to indicate successful login
             session.setAttribute("loggedIn", true);
             // redirect to index
-            response.sendRedirect("LoginSuccessCustomer.jsp");
+            response.sendRedirect("LoginSuccessEmployee.jsp");
             return;
         }
     }

@@ -11,7 +11,7 @@ public class RoomService {
     public List<Room> getRooms() throws Exception {
 
 
-        String sql = "SELECT * FROM Room";
+        String sql = "SELECT * FROM CSI2132Project.Room";
 
         ConnectionDB db = new ConnectionDB();
 

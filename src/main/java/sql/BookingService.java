@@ -6,12 +6,14 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**This function is used to send queries to sql to get, delete, update, and insert entity*/
 public class BookingService {
+
 
         public List<Booking> getBookings() throws Exception {
 
             // sql query
-            String sql = "SELECT * FROM Booking";
+            String sql = "SELECT * FROM CSI2132Project.Booking";
             ConnectionDB db = new ConnectionDB();
 
 
