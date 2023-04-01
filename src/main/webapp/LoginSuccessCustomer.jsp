@@ -17,12 +17,9 @@
     // else get that value
     else messages = (ArrayList<Message>) session.getAttribute("messages");
 
-    String msgField = "";
+    Object msgField = session.getAttribute("SINSSN");
 
-    // create the object in the form of a stringified json
-    for (Message m : messages) {
-        msgField += "{\"type\":\"" + m.type + "\",\"value\":\"" + m.value.replaceAll("['\"]+", "") + "\"},";
-    }
+    System.out.println(msgField);
 
     // empty session messages
     session.setAttribute("messages", new ArrayList<Message>());
@@ -88,7 +85,7 @@
                                 <tr>
                                     <td><%= room.getRoomNumber() %></td>
                                     <td><%= room.getAddress() %></td>
-                                    <td><%= room.getHotel_ID() %></td>
+                                    <td><%= room.getHotelChain_ID() %></td>
                                     <td><%= room.getProblem() %></td>
                                     <td><%= room.getPrice() %></td>
                                     <td><%= room.getAmenities() %></td>
@@ -96,6 +93,7 @@
                                     <td><%= room.getExtendability() %></td>
                                     <td><%= room.getView() %></td>
                                     <td><%= room.getStatus() %></td>
+                                    <td><button type="button" onclick="<%session.setAttribute("SINSSN", SINSSN);response.sendRedirect("booking.jsp");%>">Book Now</button></td>
                                 </tr>
                                 <% } %>
                                 </tbody>

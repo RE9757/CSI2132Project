@@ -14,7 +14,7 @@ public class Hotel {
 
     private String PhoneNumber;
 
-    private String City
+    private String City;
 
     public Hotel(String Address, Integer HotelChain_ID, String Email,
                  Integer NumberOfRooms, String StarsRating, String PhoneNumber, String City){
