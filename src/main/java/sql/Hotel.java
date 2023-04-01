@@ -4,7 +4,7 @@ public class Hotel {
 
     private String Address;
 
-    private Integer Hotel_ID;
+    private Integer HotelChain_ID;
 
     private String Email;
 
@@ -14,22 +14,25 @@ public class Hotel {
 
     private String PhoneNumber;
 
-    public Hotel(String Address, Integer Hotel_ID, String Email,
-                 Integer NumberOfRooms, String StarsRating, String PhoneNumber){
+    private String City
+
+    public Hotel(String Address, Integer HotelChain_ID, String Email,
+                 Integer NumberOfRooms, String StarsRating, String PhoneNumber, String City){
         this.Address = Address;
-        this.Hotel_ID = Hotel_ID;
+        this.HotelChain_ID = HotelChain_ID;
         this.Email = Email;
         this.NumberOfRooms = NumberOfRooms;
         this.StarsRating = StarsRating;
         this.PhoneNumber = PhoneNumber;
+        this.City = City;
     }
 
     public String getAddress() {
         return Address;
     }
 
-    public Integer getHotel_ID() {
-        return Hotel_ID;
+    public Integer getHotelChain_ID() {
+        return HotelChain_ID;
     }
 
     public String getEmail() {
@@ -48,12 +51,14 @@ public class Hotel {
         return PhoneNumber;
     }
 
+    public String getCity(){return City;}
+
     public void setAddress(String address) {
         Address = address;
     }
 
-    public void setHotel_ID(Integer hotel_ID) {
-        Hotel_ID = hotel_ID;
+    public void setHotelChain_ID(Integer hotelchain_ID) {
+        HotelChain_ID = hotelchain_ID;
     }
 
     public void setEmail(String email) {
@@ -72,15 +77,20 @@ public class Hotel {
         PhoneNumber = phoneNumber;
     }
 
+    public void setCity(String city){
+        City=city;
+    }
+
     @Override
     public String toString() {
 
         return "<ul>"
                 + "<li>Address= " + Address + "</li>"
-                + "<li>HotelID= " + Hotel_ID + "</li>"
+                + "<li>HotelID= " + HotelChain_ID + "</li>"
                 + "<li>Email= " + Email + "</li>"
                 + "<li>NumberOfRooms= " + NumberOfRooms + "</li>"
                 + "<li>StarsRating= " + StarsRating + "</li>"
-                + "<li>PhoneNumber= " + PhoneNumber + "</li>";
+                + "<li>PhoneNumber= " + PhoneNumber + "</li>"
+                + "<li>City= " + City + "</li>";
     }
 }

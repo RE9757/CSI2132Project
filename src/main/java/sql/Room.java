@@ -8,7 +8,7 @@ public class Room {
 
     private String Address;
 
-    private Integer Hotel_ID;
+    private Integer HotelChain_ID;
 
     private String Problem;
 
@@ -24,12 +24,12 @@ public class Room {
 
     private String Status;
 
-    public Room(Integer RoomNumber, String Address, Integer Hotel_ID,
+    public Room(Integer RoomNumber, String Address, Integer HotelChain_ID,
                 String Problem, Integer Price, Boolean Amenities,
                 String Capacity, Boolean Extendability, String View, String Status){
         this.RoomNumber = RoomNumber;
         this.Address = Address;
-        this.Hotel_ID = Hotel_ID;
+        this.HotelChain_ID = HotelChain_ID;
         this.Problem = Problem;
         this.Price = Price;
         this.Amenities = Amenities;
@@ -47,8 +47,8 @@ public class Room {
         return Address;
     }
 
-    public Integer getHotel_ID() {
-        return Hotel_ID;
+    public Integer getHotelChain_ID() {
+        return HotelChain_ID;
     }
 
     public String getProblem() {
@@ -87,8 +87,8 @@ public class Room {
         Address = address;
     }
 
-    public void setHotel_ID(Integer hotel_ID) {
-        Hotel_ID = hotel_ID;
+    public void setHotelChain_ID(Integer hotelChain_ID) {
+        HotelChain_ID = hotelChain_ID;
     }
 
     public void setProblem(String problem) {
@@ -124,7 +124,7 @@ public class Room {
         return "<ul>"
                 + "<li>RoomNumber= " + RoomNumber + "</li>"
                 + "<li>Address= " + Address + "</li>"
-                + "<li>Hotel_ID= " + Hotel_ID + "</li>"
+                + "<li>Hotel_ID= " + HotelChain_ID + "</li>"
                 + "<li>Problem= " + Problem + "</li>"
                 + "<li>Price= " + Price + "</li>"
                 + "<li>Amenities= " + Amenities + "</li>"

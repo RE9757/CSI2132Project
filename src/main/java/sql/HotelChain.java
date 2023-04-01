@@ -2,7 +2,7 @@ package sql;
 
 public class HotelChain {
 
-    private Integer Hotel_ID;
+    private Integer HotelChain_ID;
 
     private String email;
 
@@ -14,9 +14,9 @@ public class HotelChain {
 
     private String name;
 
-    public HotelChain(Integer Hotel_ID, String email, String PhoneNumber,
+    public HotelChain(Integer HotelChain_ID, String email, String PhoneNumber,
                       Integer NumberOfHotels, String AddressOfCentralOffice, String name){
-        this.Hotel_ID = Hotel_ID;
+        this.HotelChain_ID = HotelChain_ID;
         this.email = email;
         this.PhoneNumber = PhoneNumber;
         this.NumberOfHotels = NumberOfHotels;
@@ -24,8 +24,8 @@ public class HotelChain {
         this.name = name;
     }
 
-    public Integer getHotel_ID() {
-        return Hotel_ID;
+    public Integer getHotelChain_ID() {
+        return HotelChain_ID;
     }
 
     public String getEmail() {
@@ -47,8 +47,8 @@ public class HotelChain {
         return name;
     }
 
-    public void setHotel_ID(Integer hotel_ID) {
-        Hotel_ID = hotel_ID;
+    public void setHotelChain_ID(Integer hotelChain_ID) {
+        HotelChain_ID = hotelChain_ID;
     }
 
     public void setEmail(String email) {
@@ -75,7 +75,7 @@ public class HotelChain {
     public String toString() {
 
         return "<ul>"
-                + "<li>Hotel_ID= " + Hotel_ID + "</li>"
+                + "<li>Hotel_ID= " + HotelChain_ID + "</li>"
                 + "<li>email= " + email + "</li>"
                 + "<li>PhoneNumber= " + PhoneNumber + "</li>"
                 + "<li>NumberOfHotels= " + NumberOfHotels + "</li>"

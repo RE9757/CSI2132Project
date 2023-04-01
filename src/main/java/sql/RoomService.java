@@ -33,7 +33,7 @@ public class RoomService {
                 Room room = new Room(
                         rs.getInt("roomnumber"),
                         rs.getString("address"),
-                        rs.getInt("hotel_id"),
+                        rs.getInt("hotelchain_id"),
                         rs.getString("problems"),
                         rs.getInt("price"),
                         rs.getBoolean("amenities"),
@@ -102,7 +102,7 @@ public class RoomService {
 
         System.out.println(room.getRoomNumber());
         System.out.println(room.getAddress());
-        System.out.println(room.getHotel_ID());
+        System.out.println(room.getHotelChain_ID());
         System.out.println(room.getProblem());
         System.out.println(room.getPrice());
         System.out.println(room.getAmenities());
@@ -112,7 +112,7 @@ public class RoomService {
         System.out.println(room.getStatus());
 
 
-        String insertRoomQuery = "INSERT INTO Room (RoomNumber, Address, Hotel_ID, Problem, Price, Amenities, Capacity, Extendability, View, Status) " +
+        String insertRoomQuery = "INSERT INTO Room (RoomNumber, Address, HotelChain_ID, Problem, Price, Amenities, Capacity, Extendability, View, Status) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
@@ -125,7 +125,7 @@ public class RoomService {
             // set every ? of statement
             stmt.setInt(1, room.getRoomNumber());
             stmt.setString(2, room.getAddress());
-            stmt.setInt(3, room.getHotel_ID());
+            stmt.setInt(3, room.getHotelChain_ID());
             stmt.setString(4, room.getProblem());
             stmt.setInt(5, room.getPrice());
             stmt.setBoolean(6, room.getAmenities());
@@ -159,7 +159,7 @@ public class RoomService {
         String message = "";
 
 
-        String sql = "UPDATE Room SET Address = ?, Hotel_ID = ?, Problem = ?, Price = ?, Amenities = ?, Capacity = ?, Extendability =?," +
+        String sql = "UPDATE Room SET Address = ?, HotelChain_ID = ?, Problem = ?, Price = ?, Amenities = ?, Capacity = ?, Extendability =?," +
                 " View = ?, Status = ? WHERE RoomNumber=?;";
 
 
@@ -174,7 +174,7 @@ public class RoomService {
 
             stmt.setInt(1, room.getRoomNumber());//?
             stmt.setString(2, room.getAddress());
-            stmt.setInt(3, room.getHotel_ID());
+            stmt.setInt(3, room.getHotelChain_ID());
             stmt.setString(4, room.getProblem());
             stmt.setInt(5, room.getPrice());
             stmt.setBoolean(6, room.getAmenities());

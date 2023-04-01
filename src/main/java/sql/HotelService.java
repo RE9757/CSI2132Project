@@ -28,11 +28,12 @@ public class HotelService {
 
                 Hotel hotel = new Hotel(
                         rs.getString("Address"),
-                        rs.getInt("Hotel_ID"),
+                        rs.getInt("HotelChain_ID"),
                         rs.getString("Email"),
                         rs.getInt("NumberOfRooms"),
                         rs.getString("StarsRating"),
-                        rs.getString("PhoneNumber")
+                        rs.getString("PhoneNumber"),
+                        rs.getString("City")
                 );
 
 
@@ -53,12 +54,12 @@ public class HotelService {
         }
     }
 
-    public String deleteHotel(Integer Hotel_ID) throws Exception {
+    public String deleteHotel(String Address) throws Exception {
         Connection con = null;
         String message = "";
 
 
-        String sql = "DELETE FROM Hotel WHERE Hotel_ID = ?;";
+        String sql = "DELETE FROM Hotel WHERE Address = ?;";
 
 
         ConnectionDB db = new ConnectionDB();
@@ -69,7 +70,7 @@ public class HotelService {
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            stmt.setInt(1, Hotel_ID);
+            //stmt.setInt(1, Hotel_ID);?
 
             stmt.executeUpdate();
 
@@ -92,14 +93,15 @@ public class HotelService {
         // connection object
         ConnectionDB db = new ConnectionDB();
         System.out.println(hotel.getAddress());
-        System.out.println(hotel.getHotel_ID());
+        System.out.println(hotel.getHotelChain_ID());
         System.out.println(hotel.getEmail());
         System.out.println(hotel.getNumberOfRooms());
         System.out.println(hotel.getStarsRating());
         System.out.println(hotel.getPhoneNumber());
+        System.out.println(hotel.getCity());
 
 
-        String insertHotelQuery = "INSERT INTO Hotel (Address, Hotel_ID, Email, NumberOfRooms, StarsRating, PhoneNumber) VALUES (?, ?, ?, ?, ?, ?);";
+        String insertHotelQuery = "INSERT INTO Hotel (Address, HotelChain_ID, Email, NumberOfRooms, StarsRating, PhoneNumber,City) VALUES (?, ?, ?, ?, ?, ?,?);";
 
 
         try {
@@ -110,11 +112,12 @@ public class HotelService {
 
             // set every ? of statement
             stmt.setString(1, hotel.getAddress());
-            stmt.setInt(2, hotel.getHotel_ID());
+            stmt.setInt(2, hotel.getHotelChain_ID());
             stmt.setString(3, hotel.getEmail());
             stmt.setInt(4, hotel.getNumberOfRooms());
             stmt.setString(5, hotel.getStarsRating());
             stmt.setString(6, hotel.getPhoneNumber());
+            stmt.setString(7, hotel.getCity());
 
             int output = stmt.executeUpdate();
             System.out.println(output);
@@ -141,7 +144,7 @@ public class HotelService {
         String message = "";
 
 
-        String sql = "UPDATE hotel SET Address=?, Email=?, NumberOfRooms =?, StarsRating =?, PhoneNumber =? WHERE Hotel_ID=?;";
+        String sql = "UPDATE hotel SET HotelChain_ID=?, Email=?, NumberOfRooms =?, StarsRating =?, PhoneNumber =? WHERE Address=?;";
 
 
         ConnectionDB db = new ConnectionDB();
@@ -154,11 +157,12 @@ public class HotelService {
 
 
             stmt.setString(1, hotel.getAddress());
-            stmt.setInt(2, hotel.getHotel_ID());//?
+            stmt.setInt(2, hotel.getHotelChain_ID());//?
             stmt.setString(3, hotel.getEmail());
             stmt.setInt(4, hotel.getNumberOfRooms());
             stmt.setString(5, hotel.getStarsRating());
             stmt.setString(6, hotel.getPhoneNumber());
+            stmt.setString(7, hotel.getCity());
 
 
             stmt.executeUpdate();

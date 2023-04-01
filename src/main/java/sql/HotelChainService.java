@@ -27,7 +27,7 @@ public class HotelChainService {
             while (rs.next()) {
 
                 HotelChain HotelChain = new HotelChain(
-                        rs.getInt("Hotel_ID"),
+                        rs.getInt("HotelChain_ID"),
                         rs.getString("email"),
                         rs.getString("PhoneNumber"),
                         rs.getInt("NumberOfHotels"),
@@ -53,12 +53,12 @@ public class HotelChainService {
         }
     }
 
-    public String deleteHotelChain(Integer Hotel_ID) throws Exception {
+    public String deleteHotelChain(Integer HotelChain_ID) throws Exception {
         Connection con = null;
         String message = "";
 
 
-        String sql = "DELETE FROM HotelChain WHERE Hotel_ID = ?;";
+        String sql = "DELETE FROM HotelChain WHERE HotelChain_ID = ?;";
 
 
         ConnectionDB db = new ConnectionDB();
@@ -69,7 +69,7 @@ public class HotelChainService {
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            stmt.setInt(1, Hotel_ID);
+            stmt.setInt(1, HotelChain_ID);
 
             stmt.executeUpdate();
 
@@ -91,7 +91,7 @@ public class HotelChainService {
 
         // connection object
         ConnectionDB db = new ConnectionDB();
-        System.out.println(hotelChain.getHotel_ID());
+        System.out.println(hotelChain.getHotelChain_ID());
         System.out.println(hotelChain.getEmail());
         System.out.println(hotelChain.getPhoneNumber());
         System.out.println(hotelChain.getNumberOfHotels());
@@ -109,7 +109,7 @@ public class HotelChainService {
             PreparedStatement stmt = con.prepareStatement(insertHotelChainQuery);
 
             // set every ? of statement
-            stmt.setInt(1, hotelChain.getHotel_ID());
+            stmt.setInt(1, hotelChain.getHotelChain_ID());
             stmt.setString(2, hotelChain.getEmail());
             stmt.setString(3, hotelChain.getPhoneNumber());
             stmt.setInt(4, hotelChain.getNumberOfHotels());
@@ -153,7 +153,7 @@ public class HotelChainService {
             PreparedStatement stmt = con.prepareStatement(sql);
 
 
-            stmt.setInt(1, hotelChain.getHotel_ID());
+            stmt.setInt(1, hotelChain.getHotelChain_ID());
             stmt.setString(2, hotelChain.getEmail());
             stmt.setString(3, hotelChain.getPhoneNumber());
             stmt.setInt(4, hotelChain.getNumberOfHotels());
