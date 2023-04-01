@@ -11,7 +11,7 @@ public class CustomerService {
     public List<Customer> getCustomers() throws Exception {
 
 
-        String sql = "SELECT * FROM CSI2132Project.Customer";
+        String sql = "select * from customer";
 
         ConnectionDB db = new ConnectionDB();
 
@@ -29,11 +29,11 @@ public class CustomerService {
             while (rs.next()) {
 
                 Customer customer = new Customer(
-                        rs.getInt("SINSSN"),
-                        rs.getString("Address"),
-                        rs.getString("FullName"),
-                        rs.getDate("DateOfRegistration"),
-                        rs.getInt("CustomerId")
+                        rs.getInt("sinssn"),
+                        rs.getString("address"),
+                        rs.getString("fullname"),
+                        rs.getDate("dateOfregistration"),
+                        rs.getInt("customerid")
                 );
 
 

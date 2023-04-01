@@ -1,5 +1,3 @@
-<%@ page import="jsp.LayoutService" %>
-<%@ page import="jsp.Pair" %>
 <%@ page import="jsp.Message" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -26,15 +24,9 @@
                 session.setAttribute("messages", new ArrayList<Message>());
 
                 // retrieve best dribbler/shooter details from database
-                Pair<String, Integer> bestDribblerDetails = null, bestShooterDetailes = null;
-                LayoutService layoutService = new LayoutService();
-                try {
-                    bestDribblerDetails = layoutService.getBestDribblerDetails();
-                    bestShooterDetailes = layoutService.getBestShooterDetails();
+                //Pair<String, Integer> bestDribblerDetails = null, bestShooterDetailes = null;
+                //LayoutService layoutService = new LayoutService();
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             %>
 
 

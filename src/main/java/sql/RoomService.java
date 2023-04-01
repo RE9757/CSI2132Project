@@ -11,7 +11,7 @@ public class RoomService {
     public List<Room> getRooms() throws Exception {
 
 
-        String sql = "SELECT * FROM CSI2132Project.Room";
+        String sql = "SELECT * FROM room";
 
         ConnectionDB db = new ConnectionDB();
 
@@ -31,16 +31,16 @@ public class RoomService {
             while (rs.next()) {
 
                 Room room = new Room(
-                        rs.getInt("RoomNumber"),
-                        rs.getString("Address"),
-                        rs.getInt("Hotel_ID"),
-                        rs.getString("Problem"),
-                        rs.getInt("Price"),
-                        rs.getBoolean("Amenities"),
-                        rs.getString("Capacity"),
-                        rs.getBoolean("Extendability"),
-                        rs.getString("View"),
-                        rs.getString("Status")
+                        rs.getInt("roomnumber"),
+                        rs.getString("address"),
+                        rs.getInt("hotel_id"),
+                        rs.getString("problems"),
+                        rs.getInt("price"),
+                        rs.getBoolean("amenities"),
+                        rs.getString("capacity"),
+                        rs.getBoolean("extendability"),
+                        rs.getString("view"),
+                        rs.getString("status")
 
                 );
 

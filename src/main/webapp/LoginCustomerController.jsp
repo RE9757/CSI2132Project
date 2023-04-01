@@ -11,7 +11,7 @@
 
 <%
     // get values from the request
-    Integer SINSSN = Integer.parseInt(request.getParameter("SINSSN"));
+    int SINSSN = Integer.parseInt(request.getParameter("SINSSN"));
     String FullName = request.getParameter("FullName");
 
     CustomerService customerService = new CustomerService();
@@ -25,16 +25,28 @@
         System.out.println("error" + "Something went wrong!");
     }
 
+    boolean flag = false;
+
     for (Customer c : customers) {
-        if (c.getSINSSN()==(SINSSN) && c.getFullName()==(FullName)) {//.equals?
+        if (c.getSINSSN()==(SINSSN) && c.getFullName().equals(FullName)) {//.equals?
             // set session attribute to indicate successful login
-            session.setAttribute("loggedIn", true);
-            // redirect to index
-            response.sendRedirect("LoginSuccessCustomer.jsp");
-            return;
+            //session.setAttribute("loggedIn", true);
+
+            flag = true;
+            break;
         }
     }
 
-    // if no matching customer is found, redirect back to login
-    response.sendRedirect("login.jsp");
+    //System.out.println(flag);
+
+    if(flag) {
+    // redirect to index
+        response.sendRedirect("LoginSuccessCustomer.jsp");
+    }
+    else{
+        // if no matching customer is found, redirect back to login
+          response.sendRedirect("login.jsp");
+    }
+
+
 %>

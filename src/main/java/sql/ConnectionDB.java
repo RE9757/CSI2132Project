@@ -1,11 +1,10 @@
 package sql;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 
 public class ConnectionDB {
+
 
     /* Database connection settings, change dbName, dbusername, dbpassword */
     private final String ipAddress = "127.0.0.1";
@@ -28,7 +27,7 @@ public class ConnectionDB {
         try {
             Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection("jdbc:postgresql://"
-                    + "localhost" + ":" + dbServerPort + "/" + dbName, dbusername, dbpassword);//ipAddress
+                    + ipAddress + ":" + dbServerPort + "/" + dbName, dbusername, dbpassword);//ipAddress
             return con;
         } catch (Exception e) {
 
@@ -52,6 +51,9 @@ public class ConnectionDB {
             throw new SQLException("Could not close connection with the Database Server: "
                     + e.getMessage());
         }
+    }
+
+    public static void main (String[] args) {
 
     }
 }

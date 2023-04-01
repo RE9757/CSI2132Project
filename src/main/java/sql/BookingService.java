@@ -10,24 +10,27 @@ import java.util.List;
 public class BookingService {
 
 
+    /**Get information from Booking set, using SELECT * FROM query*/
         public List<Booking> getBookings() throws Exception {
 
             // sql query
-            String sql = "SELECT * FROM CSI2132Project.Booking";
+            String sql = "SELECT * FROM Booking";//laboratories
             ConnectionDB db = new ConnectionDB();
 
-
+            //Create a new booking list
             List<Booking> bookings = new ArrayList<>();
 
 
             try (Connection con = db.getConnection()) {
 
+                //make connection to database
                 PreparedStatement stmt = con.prepareStatement(sql);
 
+                //Execute query to collect information
                 ResultSet rs = stmt.executeQuery();//"SELECT * FROM CSI2132Project.Booking"
 
                 while (rs.next()) {
-
+                    //set all constraints into arraylist
                     Booking booking = new Booking(
                             rs.getInt("Booking_ID"),
                             rs.getInt("SINSSN"),
@@ -40,25 +43,30 @@ public class BookingService {
                     bookings.add(booking);
                 }
 
-
+                //close database after using
                 rs.close();
                 stmt.close();
                 con.close();
                 db.close();
 
 
+                //return the arrayList
                 return bookings;
             } catch (Exception e) {
 
+                //if there has any error, then throw exception
                 throw new Exception(e.getMessage());
             }
         }
 
+        /**The delete function of Booking based on DELETE query of sql*/
         public String deleteBooking(Integer BookingID) throws Exception {
+
+            //create empty connection and message
             Connection con = null;
             String message = "";
 
-
+            //set a DELETE query before execute
             String sql = "DELETE FROM Booking WHERE BookingID = ?;";
 
 
@@ -66,6 +74,7 @@ public class BookingService {
 
 
             try {
+                //make new connection
                 con = db.getConnection();
 
                 PreparedStatement stmt = con.prepareStatement(sql);
@@ -77,6 +86,7 @@ public class BookingService {
                 stmt.close();
 
             } catch (Exception e) {
+
                 message = "Error while delete sql.Booking: " + e.getMessage();
             } finally {
                 if (con != null) con.close();
@@ -86,6 +96,7 @@ public class BookingService {
             return message;
         }
 
+        /***/
         public String createBooking(Booking booking) throws Exception {
             String message = "";
             Connection con = null;

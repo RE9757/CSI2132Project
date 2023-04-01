@@ -11,7 +11,7 @@ public class HotelChainService {
     public List<HotelChain> getHotelChain() throws Exception {
 
         // sql query
-        String sql = "SELECT * FROM CSI2132Project.HotelChain";
+        String sql = "SELECT * FROM HotelChain";
         ConnectionDB db = new ConnectionDB();
 
 

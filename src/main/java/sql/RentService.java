@@ -12,7 +12,7 @@ public class RentService {
     public List<Rent> getRents() throws Exception {
 
         // sql query
-        String sql = "SELECT * FROM CSI2132Project.Rent";
+        String sql = "SELECT * FROM Rent";
         ConnectionDB db = new ConnectionDB();
 
 

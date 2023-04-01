@@ -5,7 +5,7 @@ import java.sql.Date;
 
 public class Customer {
 
-    private Integer SINSSN;
+    private int SINSSN;
 
     private String Address;
 
@@ -13,9 +13,9 @@ public class Customer {
 
     private Date DateOfRegistration;
 
-    private Integer CustomerId;
+    private int CustomerId;
 
-    public Customer(Integer SINSSN, String Address, String FullName, Date DateOfRegistration, Integer CustomerId){
+    public Customer(int SINSSN, String Address, String FullName, Date DateOfRegistration, int CustomerId){
         this.SINSSN = SINSSN;
         this.Address = Address;
         this.FullName = FullName;
@@ -23,7 +23,7 @@ public class Customer {
         this.CustomerId = CustomerId;
     }
 
-    public Integer getSINSSN() {
+    public int getSINSSN() {
         return SINSSN;
     }
 
@@ -39,11 +39,11 @@ public class Customer {
         return DateOfRegistration;
     }
 
-    public Integer getCustomerId() {
+    public int getCustomerId() {
         return CustomerId;
     }
 
-    public void setSINSSN(Integer SINSSN) {
+    public void setSINSSN(int SINSSN) {
         this.SINSSN = SINSSN;
     }
 
@@ -59,7 +59,7 @@ public class Customer {
         DateOfRegistration = dateOfRegistration;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(int customerId) {
         CustomerId = customerId;
     }
 

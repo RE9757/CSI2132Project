@@ -18,24 +18,16 @@
         String msgField = "";
 
         // create the object in the form of a stringified json
-        for (Message m : messages) {
-            msgField += "{\"type\":\"" + m.type + "\",\"value\":\"" + m.value.replaceAll("['\"]+", "") + "\"},";
-        }
+
 
 
                 // empty session messages
-                session.setAttribute("messages", new ArrayList<Message>());
+                //session.setAttribute("messages", new ArrayList<Message>());
 
                 // retrieve best dribbler/shooter details from database
-                Pair<String, Integer> bestDribblerDetails = null, bestShooterDetailes = null;
-                LayoutService layoutService = new LayoutService();
-                try {
-                    bestDribblerDetails = layoutService.getBestDribblerDetails();
-                    bestShooterDetailes = layoutService.getBestShooterDetails();
+                //Pair<String, Integer> bestDribblerDetails = null, bestShooterDetailes = null;
+                //LayoutService layoutService = new LayoutService();
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             %>
 
 
