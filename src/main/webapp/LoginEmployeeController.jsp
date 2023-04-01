@@ -30,6 +30,7 @@
             // set session attribute to indicate successful login
             session.setAttribute("loggedIn", true);
             // redirect to index
+            //response.setAttribute()
             response.sendRedirect("LoginSuccessEmployee.jsp");
             return;
         }

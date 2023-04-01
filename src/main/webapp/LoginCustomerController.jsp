@@ -41,6 +41,7 @@
 
     if(flag) {
     // redirect to index
+        session.setAttribute("SINSSN", SINSSN);
         response.sendRedirect("LoginSuccessCustomer.jsp");
     }
     else{
