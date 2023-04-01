@@ -1,10 +1,15 @@
+<%
+    Object id = session.getAttribute("SINSSN");
+    System.out.println(id);
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Booking</title>
-    <link rel="stylesheet" href="booking.css">   
+    <link rel="stylesheet" href="/assets/css/booking.css">   
 </head>
 
 <body>
