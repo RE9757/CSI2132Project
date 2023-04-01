@@ -28,6 +28,7 @@ public class BookingServlet extends HttpServlet {
         catch (Exception e) {
             e.printStackTrace();
         }
+        resp.sendRedirect("booking.html");
     }
 
     private Date StringToDate(String date){
