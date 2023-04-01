@@ -30,7 +30,7 @@
     for (Customer c : customers) {
         if (c.getSINSSN()==(SINSSN) && c.getFullName().equals(FullName)) {//.equals?
             // set session attribute to indicate successful login
-            //session.setAttribute("loggedIn", true);
+            session.setAttribute("id", SINSSN);
 
             flag = true;
             break;
