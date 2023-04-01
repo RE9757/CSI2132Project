@@ -8,14 +8,14 @@ import java.sql.Date;
 public class Booking {
 
     /**This is the BookingID for booking a room which is a primary key for Booking entity set*/
-    private Integer BookingID;
+    private int BookingID;
 
     /**This is SINSSN which means the SIN/SSN for whom books the room
      * it is an foreign key in booking entity set which reference to Customer(SINSSN)*/
-    private Integer SINSSN;
+    private int SINSSN;
 
     /**This is the integer value to indicate the room number booking*/
-    private Integer RoomNumber;
+    private int RoomNumber;
 
     /**This Date represent the start date of booking*/
     private Date Start_Date;
@@ -29,7 +29,7 @@ public class Booking {
      * @param RoomNumber
      * @param Start_Date
      * @param End_Date*/
-    public Booking(Integer BookingID, Integer SINSSN, Integer RoomNumber,
+    public Booking(int BookingID, int SINSSN, int RoomNumber,
                    Date Start_Date, Date End_Date){
         this.BookingID = BookingID;
         this.SINSSN = SINSSN;
@@ -39,17 +39,17 @@ public class Booking {
     }
 
     /**A getter for Booking class*/
-    public Integer getBookingID() {
+    public int getBookingID() {
         return BookingID;
     }
 
     /**A getter for Booking class*/
-    public Integer getSINSSN() {
+    public int getSINSSN() {
         return SINSSN;
     }
 
     /**A getter for Booking class*/
-    public Integer getRoomNumber() {
+    public int getRoomNumber() {
         return RoomNumber;
     }
 
@@ -64,17 +64,17 @@ public class Booking {
     }
 
     /**A setter for Booking class*/
-    public void setBookingID(Integer bookingID) {
+    public void setBookingID(int bookingID) {
         BookingID = bookingID;
     }
 
     /**A setter for Booking class*/
-    public void setSINSSN(Integer SINSSN) {
+    public void setSINSSN(int SINSSN) {
         this.SINSSN = SINSSN;
     }
 
     /**A setter for Booking class*/
-    public void setRoomNumber(Integer roomNumber) {
+    public void setRoomNumber(int roomNumber) {
         RoomNumber = roomNumber;
     }
 
